@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "new_group" do %>
+  <%= form_with model: @group do |f| %>
+    <%= f.text_field :group_name, placeholder: "Group name" %>
+    <%= f.text_area :description, placeholder: "Description" %>
+    <%= f.submit "Create group" %>
+  <% end %>
+<% end %>
