@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def generate_link
+    @link = Link.create(link: SecureRandom.uuid, linkable: @user)
+    @link = ENV["BASE_URL"] + "/" + @link.link + "/draw-participants"
+  end
+
   private
 
   def user_params

@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "new_user" do %>
+  <%= form_with model: @user do |f| %>
+    <%= f.text_field :username, placeholder: "Username" %>
+    <%= f.text_field :full_name, placeholder: "Full name" %>
+    <%= f.email_field :email, placeholder: "Email" %>
+    <%= f.submit "Create user" %>
+  <% end %>
+<% end %>

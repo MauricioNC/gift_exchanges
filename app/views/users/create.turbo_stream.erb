@@ -1,0 +1,7 @@
+<%= turbo_stream.update "new_user", "User created successfully." %>
+<%= turbo_stream.append "new_user",
+                        partial: "shared/link",
+                        locals: {
+                          link: @link,
+                          title: "Use this link to draw participants"
+                        } %>
