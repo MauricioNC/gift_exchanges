@@ -1,1 +1,2 @@
 <%= turbo_stream.update "new_group", "Group created successfully." %>
+<%= turbo_stream.append "new_group", partial: "shared/link", locals: { link: @link } %>
