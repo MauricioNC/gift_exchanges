@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_group, only: %i[ create ]
+
   def new
     @user = User.new
   end
@@ -8,6 +10,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        LinkUserToGroupJob.perform_later(@user.id, @group.id)
         generate_link()
 
         format.html {}
@@ -27,6 +30,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :full_name, :email)
+  end
+
+  def set_group
+    @group = Group.find(Link.find_by_link(params[:group_link]).linkable_id)
   end
 end
 
