@@ -1,8 +1,13 @@
 <div>
-  <ul>
-    <% @users.each do |u| %>
-      <li><%= u %></li>
+  <% unless @users.empty? %>
+    <ul>
+      <% @users.each do |u| %>
+      <li><%= u.username %></li>
     <% end %>
-  </ul>
-  <button>Draw participants</button>
+    </ul>  
+    <%= @drawed_participant %>
+    <button>Draw participants</button>
+  <% else %>
+    <p>There's no more participants to sort</p>
+  <% end %>
 </div>

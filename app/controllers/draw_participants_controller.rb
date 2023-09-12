@@ -2,7 +2,20 @@ class DrawParticipantsController < ApplicationController
   before_action :set_user
 
   def index
-    @users = User.select(:username).where.not(id: @user.id).map(&:username)
+    @users = User.select(:id, :username).where.not(id: @user.id).where(is_drawed: false).shuffle
+
+    unless @users.empty?
+      @drawed_participant = draw_participant()
+    end
+  end
+
+  def draw_participant
+    random_idx = rand(0..@users.count-1)
+
+    participant = User.find(@users[random_idx].id)
+    participant.update(is_drawed: true)
+
+    @users[random_idx].username
   end
 
   private
