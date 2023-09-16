@@ -12,6 +12,10 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         montserrat: ['Montserrat'],
+        firaSans: "Fira Sans"
+      },
+      colors: {
+        baseColor: "#8934F4"
       },
     },
   },

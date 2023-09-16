@@ -1,7 +1,9 @@
-<div>
-  <h1>Creating memories in every moment</h1>
-  <h3>exchange gifts and happiness</h3>
-  <%= link_to new_group_path do %>
+<div class="w-full h-full flex flex-col sm:justify-center sm:items-center col-start-3 col-span-8">
+  <figure class="w-full h-3/6 flex justify-center">
+    <%= image_tag 'Illustration_home' %>
+  </figure>
+  <h1 class="text-3xl font-bold text-baseColor text-center w-3/4 mb-12">A gift for every reason and every season</h1>
+  <%= link_to new_group_path, class: "bg-baseColor p-3 text-white text-xl w-full text-center rounded-md" do %>
     Get started <span>&#8250;</span>
   <% end %>
 </div>
