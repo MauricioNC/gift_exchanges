@@ -15,7 +15,8 @@ module.exports = {
         firaSans: "Fira Sans"
       },
       colors: {
-        baseColor: "#8934F4"
+        baseColor: "#8934F4",
+        link: "#047993"
       },
     },
   },
